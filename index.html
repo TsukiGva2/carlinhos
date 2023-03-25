@@ -18,13 +18,13 @@
 				<button type="button" onclick="carlinhos()"><h1><em>APERTE AQUI PARA OUVIR O CARLINHOS</em></h1></button>
 				<p>a cleide bebe esperma</p>
 				<p>a dalva bebe esperma</p>
-				<p id="debugp">debugos: </p>
 			</div>
 		</div>
 		<script type="text/JavaScript">
-			amp(document.getElementById("carlinhos"), 4);
 			function carlinhos() {
 				audio = document.getElementById("carlinhos");
+				amp(audio, 4);
+
 				audio.play()
 			}
 		</script>
