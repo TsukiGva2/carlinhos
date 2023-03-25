@@ -1,17 +1,11 @@
 function amp(e, n) {
-	let context = new (window.AudioContext || window.webkitAudioContext);
-	let result = {
-		context: context,
-		source: context.createMediaElementSource(e),
-		gain: context.createGain(),
-		media: e,
-		amplify: n => result.gain.gain.value = n,
-		getAmpLevel: () => result.gain.gain.value
-	};
+	const ctx = new AudioContext();
+	const source = ctx.createMediaElementSource(e);
 
-	result.source.connect(result.gain);
-	result.gain.connect(context.destination);
-	result.amplify(n);
-	return result;
+	const gain = ctx.createGain();
+	gain.gain.value = n;
+	source.connect(gain);
+
+	gain.connect(ctx.destination);
 }
 
