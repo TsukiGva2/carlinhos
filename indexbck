@@ -3,7 +3,6 @@
 	<head>
 		<title>Carlinhos mamando</title>
 		<link rel="stylesheet" href="style.css"/>
-		<meta charset="utf-8"/>
 	</head>
 	<body>
 		<script src="amplify.js"></script>
@@ -12,40 +11,53 @@
 				<source src="carlinhos.opus">
 				Seu navegador é uma bosta, roda essa merda no chrome porra
 			</audio>
+			<audio id="carlinhosalt" onloadstart="this.volume=1">
+				<source src="carlinhos.opus">
+				Seu navegador é uma bosta, roda essa merda no chrome porra
+			</audio>
 
 			<img src="carlinhos.png" width="100%" height="100%"/>
 
 			<div class="centered">
 				<button type="button" onclick="carlinhos()"><h1><em>APERTE AQUI PARA OUVIR O CARLINHOS</em></h1></button>
-				<button type="button" onclick="carlinhos_mijando_no_seu_ouvido()"><h1><em>APERTE AQUI PARA ESTOURAR MAIS</em></h1></button>
-				<h2 id="homens">áudio será estourado em 1 vezes</h2>
+				<button type="button" onclick="carlinhos_mijando_no_seu_ouvido()"><h1><em>APERTE AQUI PARA OUVIR O CARLINHOS (EARRAPE)</em></h1></button>
 				<p>a cleide bebe esperma</p>
 				<p>a dalva bebe esperma</p>
 			</div>
 		</div>
 		<script type="text/JavaScript">
 			let didamp = false;
-			let level = 1;
+			let didamp20 = false;
 
 			function carlinhos() {
 				let audio = document.getElementById("carlinhos");
+				let audioalt = document.getElementById("carlinhosalt");
 
-				if (!didamp) {
-					amp(audio, level);
-					didamp = true;
+				if (!audioalt.paused) {
+					audioalt.pause();
 				}
 
+				if (!didamp) {
+					amp(audio, 5);
+					didamp = true;
+				}
 				audio.play();
 			}
 
 			function carlinhos_mijando_no_seu_ouvido() {
-				level += 1;
-				if (didamp) {
-					location.reload();
+				let audioalt = document.getElementById("carlinhosalt");
+				let audio = document.getElementById("carlinhos");
+
+				if (!audio.paused) {
+					audio.pause();
+				}
+				
+				if (!didamp20) {
+					amp(audioalt, 20);
+					didamp20 = true;
 				}
 
-				agadois = document.getElementById("homens");
-				agadois.innerHTML = `o áudio será estourado em ${level} vezes`;
+				audioalt.play();
 			}
 		</script>
 	</body>
