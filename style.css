@@ -1,7 +1,7 @@
 .container {
 	position: relative;
 	text-align: center;
-	color: red;
+	color: chartreuse;
 }
 
 .centered {
@@ -11,5 +11,15 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 200%;
+}
+
+.centered button {
+	background: #123;
+	color: red;
+	margin: 5%;
+	border-color: green;
+	border-style: dotted;
+	border-width: medium;
+
 }
 

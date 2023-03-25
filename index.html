@@ -7,7 +7,7 @@
 	<body>
 		<script src="amplify.js"></script>
 		<div class="container">
-			<audio id="carlinhos" autoplay loop onloadstart="this.volume=1" controls>
+			<audio id="carlinhos" loop onloadstart="this.volume=1">
 				<source src="carlinhos.opus">
 				Seu navegador é uma bosta, roda essa merda no chrome porra
 			</audio>
@@ -15,13 +15,18 @@
 			<img src="carlinhos.png" width="100%" height="100%"/>
 
 			<div class="centered">
-				<h1>CARLINHOS DA A BUNDA PROS CAVALOS</h1>
-				<h2>a cleide bebe esperma</h2>
-				<h3>a dalva bebe esperma</h2>
+				<button type="button" onclick="carlinhos()"><h1><em>APERTE AQUI PARA OUVIR O CARLINHOS</em></h1></button>
+				<p>a cleide bebe esperma</p>
+				<p>a dalva bebe esperma</p>
+				<p id="debugp">debugos: </p>
 			</div>
 		</div>
 		<script type="text/JavaScript">
-			//amp(document.getElementById("carlinhos"), 20);
+			amp(document.getElementById("carlinhos"), 20);
+			function carlinhos() {
+				audio = document.getElementById("carlinhos");
+				audio.play()
+			}
 		</script>
 	</body>
 </html>
